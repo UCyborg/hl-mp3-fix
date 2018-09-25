@@ -3,6 +3,8 @@
 Small ASI plugin that fixes the issue with not playing correct MP3 files when playing expansion packs/mods with the old pre-Steam version of Half-Life.
 For example, you would always hear the Half-Life soundtrack even if playing Half-Life: Opposing Force.
 
+It also fixes the issue with the MP3 file associated with the last track not playing.
+
 Ability to play MP3 files as a substitute for playing soundtrack from CD first appeared with patch 1.1.0.9. It's an undocumented feature that only
 became official with Steam version of Half-Life. Refer to the following list to see how to name MP3 files after ripping them from Half-Life CD:
 
@@ -34,6 +36,9 @@ became official with Steam version of Half-Life. Refer to the following list to 
 26. Prospero05.mp3
 27. Suspense05.mp3
 28. Suspense07.mp3
+
+**Important:** The MP3 decoder used in the old version of Half-Life doesn't understand ID3v2 tags commonly added by CD ripping software and such MP3s
+won't be played. Make sure your ripping software offers ability to use ID3v1 tags instead. They may also be omitted entirely.
 
 The files go into following folders. The above list can be used when ripping CDs of the expansion packs, the only difference is they have less tracks.
 

@@ -63,6 +63,14 @@ fail:		return FALSE;
 
 		free(pVersionInfo);
 
+		dwPatchBase = 0x404541;
+		if (*(BYTE *)dwPatchBase == 27)
+		{
+			VirtualProtect((LPVOID)dwPatchBase, sizeof(BYTE), PAGE_EXECUTE_READWRITE, &dwOldProtect);
+			*(BYTE *)dwPatchBase = 28;
+			VirtualProtect((LPVOID)dwPatchBase, sizeof(BYTE), dwOldProtect, &dwOldProtect);
+		}
+
 		dwPatchBase = 0x4AD7E8;
 		VirtualProtect((LPVOID)dwPatchBase, sizeof(DWORD_PTR), PAGE_READWRITE, &dwOldProtect);
 
